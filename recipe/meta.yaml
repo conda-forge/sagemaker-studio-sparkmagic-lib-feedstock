@@ -6,7 +6,7 @@ package:
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/sagemaker_studio_sparkmagic_lib-{{ version }}.tar.gz
+  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/sagemaker_studio_sparkmagic_lib-{{ version }}.tar.gz
   sha256: 6dac6e80f331b5587aac389f41625a83f825dfa5b913f185b83053e1d4c8a470
 
 build:
@@ -14,14 +14,14 @@ build:
     - sm-sparkmagic=sagemaker_studio_sparkmagic_lib.cli:main
   noarch: python
   script: {{ PYTHON }} -m pip install . -vv
-  number: 0
+  number: 1
 
 requirements:
   host:
-    - python >=3.6
+    - python {{ python_min }}
     - pip
   run:
-    - python >=3.6
+    - python >={{ python_min }}
     - boto3 >=1.10.44,<2.0
     - ipython
 
@@ -33,6 +33,7 @@ test:
     - sm-sparkmagic --help
   requires:
     - pip
+    - python {{ python_min }}
 
 about:
   home: https://github.com/aws-samples/sagemaker-studio-sparkmagic-conf
@@ -46,4 +47,6 @@ about:
 
 extra:
   recipe-maintainers:
+    - navinsoni
+    - meghanajs99
     - just4brown
