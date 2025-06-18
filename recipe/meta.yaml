@@ -23,6 +23,7 @@ requirements:
   run:
     - python >={{ python_min }}
     - boto3 >=1.10.44,<2.0
+    - sagemaker-jupyterlab-extension-common >=0.2.4,<1
     - ipython
 
 test:
