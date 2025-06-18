@@ -144,4 +144,6 @@ Feedstock Maintainers
 =====================
 
 * [@just4brown](https://github.com/just4brown/)
+* [@meghanajs99](https://github.com/meghanajs99/)
+* [@navinsoni](https://github.com/navinsoni/)
 
