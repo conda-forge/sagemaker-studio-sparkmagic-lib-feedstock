@@ -1,5 +1,5 @@
 {% set name = "sagemaker-studio-sparkmagic-lib" %}
-{% set version = "0.1.4" %}
+{% set version = "0.2.0" %}
 
 package:
   name: {{ name|lower }}
@@ -7,14 +7,14 @@ package:
 
 source:
   url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/sagemaker_studio_sparkmagic_lib-{{ version }}.tar.gz
-  sha256: 6dac6e80f331b5587aac389f41625a83f825dfa5b913f185b83053e1d4c8a470
+  sha256: f1ae6f1c0efc04e9b1666817ebf3a6addd3a8e1cf676f9c39567eb84f260af12
 
 build:
   entry_points:
     - sm-sparkmagic=sagemaker_studio_sparkmagic_lib.cli:main
   noarch: python
   script: {{ PYTHON }} -m pip install . -vv
-  number: 1
+  number: 0
 
 requirements:
   host:
